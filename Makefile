@@ -332,6 +332,30 @@ else
 	$(QUIET)mv $(PDFDIR)/$(CSPEC)-optimized.pdf $@
 endif
 
+# C++ for OpenCL doc
+EXTSPEC = OpenCL_CXX4OpenCL
+EXTSPECSRC = $(EXTSPEC).txt $(GENDEPENDS) \
+    $(shell grep ^include:: $(EXTSPEC).txt | sed -e 's/^include:://' -e 's/\[\]/ /' | xargs echo)
+
+exthtml: $(HTMLDIR)/$(EXTSPEC).html $(EXTSPECSRC)
+
+$(HTMLDIR)/$(EXTSPEC).html: $(EXTSPECSRC) katexinst
+	$(QUIET)$(ASCIIDOCTOR) -b html5 $(ADOCOPTS) $(ADOCHTMLOPTS) -o $@ $(EXTSPEC).txt
+
+extpdf: $(PDFDIR)/$(EXTSPEC).pdf $(EXTSPECSRC)
+
+$(PDFDIR)/$(EXTSPEC).pdf: $(EXTSPECSRC)
+	$(QUIET)$(MKDIR) $(PDFDIR)
+	$(QUIET)$(MKDIR) $(PDFMATHDIR)
+	$(QUIET)$(ASCIIDOCTOR) -b pdf $(ADOCOPTS) $(ADOCPDFOPTS) -o $@ $(EXTSPEC).txt
+ifndef GS_EXISTS
+	$(QUIET) echo "Warning: Ghostscript not installed, skipping pdf optimization"
+else
+	$(QUIET)$(CURDIR)/config/optimize-pdf $@
+	$(QUIET)rm $@
+	$(QUIET)mv $(PDFDIR)/$(EXTSPEC)-optimized.pdf $@
+endif
+
 # ICD installation guidelines
 ICDINSTSPEC = OpenCL_ICD_Installation
 ICDINSTSPECSRC = $(ICDINSTSPEC).txt \
