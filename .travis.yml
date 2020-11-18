@@ -22,7 +22,8 @@ script:
 
 deploy:
   provider: releases
-  api_key: ${repo_token}
+  api_key:
+  secure: "mDAPL6rGV3pT/XFKjErYbmcRjwyuE43eEInYM+57OagQ4PAFcl32NLC4q8UTR05EtfjUyzwJAJa7cbKxI4/VuJLAoMuyLkOSYb6kZC5X3pBti4BF+V2+I2God1Ot7TB3j1QoTnvhIKKmSqjl0/BIbsWiYVSQ/OAtVLq5xbG40sau9/PK8LaT6DjKQT64ZE4irb243LzKosl3WiABrIQFBlXB1AwSMe/3FGfAbxzwlfpg1fARrYNTuMAvyJp10xD87V5bXeak9bvROJ4SDobegt4o6IyVZguql7gBST+poJ3r44c/goQuwAKs3wG/ju/pWPH9DKHjr3qQu29YtXCMXEWq6/nRo60cHjpo/HtsZErmmDfxghe9P9V3EG9ZvsMN+GPpUPMV5DK4A4LNUPUsKjDb6+v0bbcloukyaIX5sTD+2DHN9qlGQsw6dJQPKSIa9/F88ZvlkFGECm/kPSLimEWJNUskxu4rGUbJxN7yTMuQvlFOMVhRSs45zq2urYew0js86RQHrrthncx/FojGDhseZEFs6Fs78Ksk8Lm9otn3n2mzvYSlOukabP3zIT0AxyWUiTQ/LYr+sBaE4Tlhxn9qAnHxqBoNcfYmeU3B/QUL69RfvGVixc+EKcjgIOxYGDgZafXXonah0o36uYtQw5i8gkU+c6n/BxPh9c0K9nA="
   file_glob: true
   file: out/pdf/*
   skip_cleanup: true
