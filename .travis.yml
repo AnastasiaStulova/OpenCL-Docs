@@ -25,7 +25,7 @@ deploy:
   file_glob: true
   file:
     - out/pdf/*
-    - out/html/
+    - out/html/*
   skip_cleanup: true
   on:
     tags: true
