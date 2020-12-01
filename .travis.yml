@@ -29,4 +29,4 @@ deploy:
   skip_cleanup: true
   on:
     tags: true
-  github_token: $GH_TOKEN
+  github_token: $GTOKEN
