@@ -30,3 +30,5 @@ deploy:
   on:
     tags: true
   github_token: $GTOKEN
+  verbose: true
+  edge: true
