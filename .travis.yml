@@ -29,6 +29,6 @@ deploy:
   skip_cleanup: true
   on:
     tags: true
-  github_token: $GTOKEN
+  api_key: $GTOKEN
   verbose: true
   edge: true
