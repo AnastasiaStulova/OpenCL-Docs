@@ -30,5 +30,4 @@ deploy:
   on:
     tags: true
   api_key: $GTOKEN
-  verbose: true
   edge: true
