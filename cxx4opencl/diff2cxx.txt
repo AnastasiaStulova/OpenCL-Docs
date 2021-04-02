@@ -1,4 +1,4 @@
-// Copyright 2019-2020 The Khronos Group. This work is licensed under a
+// Copyright 2019-2021 The Khronos Group. This work is licensed under a
 // Creative Commons Attribution 4.0 International License; see
 // http://creativecommons.org/licenses/by/4.0/
 
@@ -34,4 +34,4 @@ macro{fn-feature-macro}.
 The list above only contains extra restrictions that are not detailed in OpenCL
 C. As OpenCL restricts a number of C features, the same restrictions are
 inherited by C++ for OpenCL. The detailed list of C feature restrictions
-is provided in `OpenCL C v2.0 section 6.9`.
+is provided in `OpenCL C v3.0 section 6.11`.
